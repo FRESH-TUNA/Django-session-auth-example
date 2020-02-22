@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  
+  web:
+    image: python:3.8.1-slim
+    container_name: django_session_test
+    working_dir: /root/app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/root/app:cached
+    stdin_open: true
+    tty: true
+    command:
+      - /bin/bash
