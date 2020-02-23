@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from .views import auths
 
+app_name = 'session_auth'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('auth/',include('session_auth.urls', namespace="auth")),
+    path('login', auths.login),
+    path('logout', auths.logout),
+    path('signup', auths.signup),
 ]
